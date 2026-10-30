@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+rule_files:
+  - alertes.yml
+
+scrape_configs:
+  - job_name: "application"
+    static_configs:
+      - targets: ["app:5000"]

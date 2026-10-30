@@ -1,0 +1,10 @@
+groups:
+  - name: alertes-application
+    rules:
+      - alert: ApplicationArretee
+        expr: up{job="application"} == 0
+        for: 15s
+        labels:
+          severity: critique
+        annotations:
+          summary: "L'application ne repond plus"
